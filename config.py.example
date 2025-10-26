@@ -1,0 +1,32 @@
+"""
+Bot configuration - Example file
+Copy this to config.py and fill in your values
+"""
+import os
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
+
+# Bot token from BotFather
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+if not BOT_TOKEN:
+    raise ValueError("BOT_TOKEN environment variable is not set")
+
+# Database settings
+DB_PATH = os.getenv("DB_PATH", "bot.db")
+
+# Auto-close settings
+AUTO_CLOSE_DAYS = int(os.getenv("AUTO_CLOSE_DAYS", "3"))
+
+# Rate limiting settings
+RATE_LIMIT_MAX_REQUESTS = int(os.getenv("RATE_LIMIT_MAX_REQUESTS", "10"))
+RATE_LIMIT_PERIOD = int(os.getenv("RATE_LIMIT_PERIOD", "60"))  # seconds
+
+# Text validation
+MAX_DESCRIPTION_LENGTH = 1000
+MAX_COMMENT_LENGTH = 500
+
+# Logging
+LOG_LEVEL = os.getenv("LOG_LEVEL", "INFO")
+
